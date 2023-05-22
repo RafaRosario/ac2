@@ -1,0 +1,41 @@
+
+<form [formGroup]="form" (ngSubmit)="onSubmit(form)" class="rectangule" *ngIf="form">
+<div class="inputWrapper">
+    <label for="name">Digite seu nome</label>
+    <input type="name" placeholder="digite seu nome" id="name" formControlName="name">     
+</div>
+<div style="color: red;" *ngIf="form.get('name').invalid && (form.get('name').dirty || form.get('name').touched)">
+    <div *ngIf="form.get('name').errors['required']">O nome é obrigatório</div>
+</div>   
+<div class="inputWrapper">
+    <label for="cellphone">Digite seu telefone</label>
+    <input type="tel" placeholder="digite seu telefone" id="cellphone" formControlName="cellphone">     
+</div>
+<div style="color: red;" *ngIf="form.get('cellphone').invalid && (form.get('cellphone').dirty || form.get('cellphone').touched)">
+    <div *ngIf="form.get('cellphone').errors['required']">O telefone é obrigatório</div>
+</div>
+<div class="inputWrapper">
+    <label for="email">Digite seu email</label>
+    <input type="email" placeholder="digite seu email" id="email" formControlName="email">     
+</div>
+<div style="color: red;" *ngIf="form.get('email').invalid && (form.get('email').dirty || form.get('email').touched)">
+    <div *ngIf="form.get('email').errors['required']">O telefone é obrigatório</div>
+</div>
+<div class="inputWrapper">
+    <label for="favoriteHamburguer">Qual seu hamburguer favorito?</label>
+    <select name="favoriteHamburguer" id="favoriteHamburguer" formControlName="favoriteHamburguer">
+        <option value="Teste">teste</option>
+    </select>
+</div>
+<div style="color: red;" *ngIf="form.get('email').invalid && (form.get('email').dirty || form.get('email').touched)">
+    <div *ngIf="form.get('email').errors['required']">O telefone é obrigatório</div>
+</div>
+<div class="inputWrapper">
+    <button class="botao">enviar</button>
+</div>
+<div class="inputWrapper">
+    <button class="botao2" (click)="navegar()">ir para hamburgueres</button>
+</div>
+</form>
+
+
